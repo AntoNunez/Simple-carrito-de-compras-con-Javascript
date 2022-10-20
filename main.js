@@ -86,7 +86,7 @@ addBtns.forEach((btn) => {
 
     //Actualiza el valor total
 
-    total = getTotal();
+    getTotal();
 
     updateNumberOfItems();
 
@@ -131,6 +131,7 @@ function drawItems() {
           </div>
         </div>`;
   });
+  removeItems()
 }
 
 function updateNumberOfItems() {
@@ -170,16 +171,28 @@ function removeItems() {
       let actualBookTitle =
         event.target.parentElement.parentElement.childNodes[1].innerText;
 
-      //Busco elobjeto con ese titulo
+      //Busco el objeto con ese titulo
       let actualBookObject = shoppingCartArray.find(
         (item) => item.TITLE == actualBookTitle
       );
       //Remover el arreglo de productos del carro
-      let shoppingCartArray = shoppingCartArray.filter(
+      shoppingCartArray = shoppingCartArray.filter(
         (item) => item != actualBookObject
       );
+      console.log(shoppingCartArray)
 
-      //Actualizar el precio total
+      //Dibujar nuevamente en el Dom el arreglo de compras actualizado
+
+      drawItems();
+
+      //Actualiza el valor total
+
+      getTotal();
+
+      //Actualiza el 
+
+      updateNumberOfItems();
     });
   });
+
 }
