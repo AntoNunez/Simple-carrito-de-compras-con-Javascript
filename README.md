@@ -1,3 +1,3 @@
 # Simple-carrito-de-compras-con-Javascript
-Consuminedo Api
+Consuminedo Api,
 ecommerce
